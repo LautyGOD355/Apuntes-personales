@@ -1,0 +1,280 @@
+BIBLIA DE SQL
+
+Lista Principal - Conceptos Aprendidos:
+
+1. SQL permite trabajar con datos almacenados en una base de datos.
+   - SQL (Structured Query Language) es un lenguaje de programación utilizado para administrar y manipular bases de datos relacionales. Permite interactuar con la información almacenada en una base de datos, realizar consultas, agregar, actualizar o eliminar datos, y mucho más.
+
+2. El comando `SELECT` se utiliza para obtener datos de una tabla.
+   - `SELECT` es uno de los comandos fundamentales en SQL y se usa para recuperar datos específicos de una o varias tablas en una base de datos. Permite seleccionar columnas específicas o todas las columnas de una tabla.
+
+3. La información que puede ser guardada en tablas se llama "structured data" o datos estructurados.
+   - "Structured data" se refiere a información que se organiza de manera tabular y se almacena en filas y columnas dentro de una base de datos relacional. Cada columna tiene un nombre y un tipo de datos específico.
+
+4. Un "query" o consulta en SQL es un llamado a la información o datos en los cuales estás interesado.
+   - Un "query" o consulta es una instrucción escrita en SQL que se envía a una base de datos para recuperar, actualizar o manipular datos. Las consultas permiten realizar operaciones específicas en la base de datos.
+
+5. La información sin estructura, o "unstructured data", sirve para almacenar información que difícilmente sería almacenada en tablas.
+   - "Unstructured data" es información que no se ajusta a un formato tabular y no se puede organizar fácilmente en filas y columnas. Esto incluye datos como archivos de audio, video, imágenes o documentos complejos.
+
+6. Las bases de datos relacionales permiten establecer relaciones entre diferentes tablas.
+   - Las bases de datos relacionales utilizan tablas para organizar la información, y estas tablas pueden tener relaciones entre sí mediante el uso de claves primarias y claves foráneas, lo que facilita el acceso y la gestión de datos.
+
+7. En una base de datos relacional, los "campos claves" (key fields) son valores únicos que se utilizan para identificar de manera exclusiva cada fila en una tabla.
+   - Los "campos claves" son columnas especiales en una tabla que contienen valores únicos para cada fila. Estos valores permiten identificar de manera única cada registro en la tabla y establecer relaciones entre diferentes tablas.
+
+8. El símbolo "*" se utiliza en SQL para hacer mención de todos los campos de una tabla en una consulta. Es una forma abreviada de seleccionar todas las columnas en la tabla.
+   - El símbolo "*" se utiliza como comodín en SQL para seleccionar todas las columnas de una tabla en una consulta sin tener que enumerar cada columna individualmente.
+
+9. Para agregar comentarios en SQL, se puede utilizar el símbolo "--" para comentarios de una sola línea o "/* ... */" para comentarios de bloque.
+   - Los comentarios en SQL son útiles para agregar explicaciones o notas en el código SQL sin que afecten la ejecución de las consultas. Los comentarios de una sola línea comienzan con "--", mientras que los comentarios de bloque se encierran entre "/*" y "*/".
+
+10. SQL es un lenguaje que no distingue entre mayúsculas y minúsculas (case-insensitive), lo que significa que las palabras clave y los nombres de objetos en SQL pueden escribirse en mayúsculas o minúsculas indistintamente.
+    - SQL es un lenguaje flexible en cuanto al uso de mayúsculas y minúsculas, lo que permite escribir las consultas y comandos de diferentes formas sin afectar su funcionamiento.
+
+11. "Sorting data" o ordenar los resultados de una consulta SQL se logra con el comando `ORDER BY`, lo que permite visualizar la información en un orden específico y más significativo.
+    - La cláusula `ORDER BY` se utiliza para organizar los resultados de una consulta en un orden determinado, ya sea ascendente (de menor a mayor) o descendente (de mayor a menor), basándose en los valores de una o más columnas.
+
+12. "DESC" ordena los datos en orden descendente (de mayor a menor o de Z a A).
+    - La palabra clave "DESC" se usa junto con `ORDER BY` para ordenar los resultados de una consulta en orden descendente, lo que significa que los valores se mostrarán desde los más grandes hasta los más pequeños o en orden alfabético inverso.
+
+13. "ASC" ordena los datos en orden ascendente (de menor a mayor o de A a Z).
+    - La palabra clave "ASC" se utiliza junto con `ORDER BY` para ordenar los resultados de una consulta en orden ascendente, lo que significa que los valores se mostrarán desde los más pequeños hasta los más grandes o en orden alfabético.
+
+14. La palabra clave "LIMIT" se utiliza en SQL para extraer un número limitado de registros en una consulta, lo que permite, por ejemplo, obtener los primeros 10 registros de una tabla.
+    - "LIMIT" es una cláusula que se utiliza para restringir el número de filas que se devuelven en los resultados de una consulta. Esto es útil cuando solo deseamos obtener un número específico de registros en lugar de todos los resultados.
+
+15. El comando "OFFSET" se utiliza en SQL junto con "LIMIT" para saltar un número específico de registros en una consulta, lo que permite, por ejemplo, obtener registros después de los primeros 2 registros de una tabla.
+    - "OFFSET" es una cláusula que se utiliza junto con "LIMIT" para especificar el número de filas que se deben omitir al inicio de los resultados de una consulta. Esto permite paginar los resultados y obtener un conjunto específico de registros.
+
+16. WHERE en SQL: 
+    - Es una cláusula utilizada para filtrar registros en una consulta basándose en una condición específica.
+    - Permite seleccionar filas que cumplan con la condición especificada después de la palabra clave WHERE.
+    - Se pueden usar operadores lógicos (AND, OR, NOT) y comparaciones (=, <>, <, >, <=, >=, LIKE, BETWEEN, IN, entre otros) en la condición.
+
+17. LIKE en SQL: 
+    - El operador LIKE se utiliza para buscar palabras que contengan un tipo similar de palabra dentro de una columna.
+    - Permite buscar patrones de texto específicos, y se utiliza en combinación con `%` y `_` como comodines.
+    - Ejemplo: SELECT * FROM ropa WHERE nombre LIKE 'gucci' selecciona todas las filas donde el valor de la columna "nombre" contiene la palabra "gucci".
+    - `%` representa cero, uno o varios caracteres, lo que permite buscar palabras parciales o con variaciones en su escritura.
+    - `_` representa un solo carácter, lo que puede ser útil para buscar palabras con un carácter desconocido en una posición específica.
+    
+18. Sensibilidad de Mayúsculas y Minúsculas en Patrones:
+    - Algunos patrones en SQL pueden ser sensibles a las mayúsculas y minúsculas.
+    - Para buscar patrones sin considerar las mayúsculas o minúsculas, se pueden utilizar las funciones LOWER([nombre del campo]) y UPPER([nombre del campo]).
+    - LOWER() convierte un campo a minúsculas, mientras que 
+    - UPPER() lo convierte a mayúsculas, lo que permite realizar búsquedas sin importar la capitalización.    
+    - Ejemplo: SELECT title FROM books WHERE LOWER(title) LIKE '%cooking%' busca títulos en la tabla "books" que contengan la palabra "cooking" en cualquier posición, ignorando la capitalización. Esto obviamente utilizando la funcion WHERE con LIKE
+19. Uso de Condiciones para Crear Nuevos Campos en SQL:
+    - En SQL, se pueden utilizar condiciones para verificar valores en una columna y crear nuevos campos basados en los resultados.
+    - Para esto, se utiliza la sintaxis condición AS nombre_campo_nuevo para asignar valores booleanos (T o F) a un nuevo campo.
+    - Ejemplo: SELECT year, year > 2000 AS result FROM movies; creará un nuevo campo llamado "result" que contendrá T o F dependiendo de si el valor en la columna "year" es mayor que 2000.
+20. Operaciones de Agregación en SQL:
+    - Las operaciones de agregación en SQL permiten realizar cálculos en grupos de datos y obtener resultados resumidos, como valores máximos, mínimos, sumas, promedios, etc.
+    - Para obtener el valor máximo de una columna, se utiliza la función MAX(nombre_campo).
+    - Para obtener el valor mínimo de una columna, se utiliza la función MIN(nombre_campo).
+    - Para contar el número de registros en una tabla, se utiliza la función COUNT().
+    - Para obtener la suma del total de valores en un campo numérico, se utiliza la función SUM(nombre_campo).
+    - La función SUM(nombre_campo) también permite combinar campos utilizando operaciones matemáticas. Por ejemplo, SUM(price + delivery) sumará los valores de las columnas "price" y "delivery" para cada fila en la tabla y mostrará el resultado como la suma total.
+    - Para obtener el promedio de valores en un campo numérico, se utiliza la función AVG(nombre_campo).
+    - Estas funciones se colocan junto a SELECT para mostrar el resultado en una consulta.
+    - Estas funciones se colocan junto a SELECT para mostrar el resultado en una consulta.
+    - Ejemplo:
+      SELECT MAX(year)
+      FROM movies;
+      SELECT MIN(year)
+      FROM movies;
+      SELECT COUNT(year)
+      FROM movies;
+      SELECT SUM(year)
+      FROM movies;
+      SELECT AVG(year)
+      FROM movies;
+      
+21.  Data Grouping (Agrupación de Datos): 
+    -Data grouping es una herramienta poderosa que permite trabajar con bases de datos extensas y ofrece una nueva perspectiva para la recolección de información y la respuesta a preguntas más complejas. Una forma de implementar esta nueva perspectiva es a través del uso de la cláusula "GROUP BY" en consultas SQL.
+    - GROUP BY: La cláusula "GROUP BY" se utiliza para agrupar datos similares en categorías basadas en una columna específica en una tabla. Esto permite realizar cálculos y análisis sobre subconjuntos específicos de datos dentro de la tabla.
+
+    - Ejemplo: Supongamos que tienes una tabla llamada "movies" con información sobre películas, incluyendo género y presupuesto. Para obtener el promedio de presupuesto por género, puedes usar la consulta SQL: 
+      SELECT genre, AVG(budget)
+      FROM movies
+      GROUP BY genre;
+    - Esto agrupará las películas por género y calculará el promedio del presupuesto para cada género.
+    - Importancia: La agrupación de datos brinda la capacidad de resumir y analizar información de manera más profunda al observar tendencias y patrones en grupos específicos de datos. Es especialmente útil para análisis comparativos y segmentación.
+
+22.HAVING: 
+    - El comando "HAVING" es una herramienta en SQL que permite filtrar datos después de que han sido agrupados utilizando la cláusula "GROUP BY". A diferencia de la cláusula "WHERE", que filtra antes de que los datos sean agrupados, "HAVING" opera después de la agrupación y se aplica a las categorías o grupos resultantes.
+    - Función de Filtrado Post-Agrupación: "HAVING" se utiliza para aplicar condiciones a los resultados de las funciones de agregación (como SUM, AVG, COUNT) después de haber agrupado los datos según una columna específica.
+    - Diferencia con WHERE: La cláusula "WHERE" se utiliza para filtrar filas antes de que los datos sean agrupados. Sin embargo, debido a que "HAVING" opera después de la agrupación, puede filtrar conjuntos de datos basados en los resultados de las funciones de agregación.
+    - Ejemplo: Supongamos que deseas obtener el género de películas cuyo presupuesto promedio es mayor que 50. Utilizando "HAVING" en una consulta SQL:
+       SELECT genre, AVG(budget)
+       FROM movies
+       GROUP BY genre
+       HAVING AVG(budget) > 50;
+    -Esto agrupará las películas por género y luego filtrará los resultados, mostrando solo los géneros con un presupuesto promedio mayor que 50.
+    - Importancia: "HAVING" es esencial cuando necesitas aplicar condiciones de filtrado a los resultados de funciones de agregación después de haber agrupado los datos. Esto te permite realizar análisis más específicos y tomar decisiones basadas en agregaciones calculadas.
+    - en la fase de clean se puede utilizar para verificar datos duplicados.
+23. Comando DISTINCT: 
+    - El comando "DISTINCT" en SQL se utiliza para eliminar valores duplicados en una consulta y garantizar que solo se muestren resultados únicos. Se coloca al lado del operador "SELECT" y afecta a una o más columnas en la salida.
+    - Eliminación de Valores Duplicados: Cuando usas "DISTINCT", la consulta mostrará cada valor único solo una vez, eliminando las repeticiones.
+    - Uso en la Cláusula SELECT: "DISTINCT" se coloca inmediatamente después de la palabra clave "SELECT" en una consulta SQL. Puedes usarlo en combinación con una o más columnas para identificar los valores únicos en esas columnas específicas.
+    - Ejemplo: Supongamos que tienes una tabla de empleados con una columna "departamento" y deseas obtener una lista de los departamentos únicos en la empresa. Puedes utilizar la consulta SQL:
+      
+      SELECT DISTINCT departamento
+      FROM empleados;
+      
+    - Esto mostrará una lista de departamentos únicos, eliminando cualquier repetición.
+    - Importancia: El comando "DISTINCT" es útil para resaltar los valores únicos en una columna o conjunto de columnas. Puede ser especialmente útil cuando se trabaja con conjuntos de datos grandes y deseas eliminar duplicados para un análisis más preciso.
+
+24. NULL en SQL: 
+    -En SQL, "NULL" se utiliza para indicar la ausencia de un valor en una columna de datos. Representa la condición en la que la información no está disponible o no se ha ingresado en la base de datos para un campo específico.
+    - Significado de NULL: Cuando un campo tiene un valor NULL, eso significa que no hay información válida o conocida para ese campo en particular. Es importante diferenciar entre un valor NULL y un valor vacío o cero, ya que NULL denota la falta de información.
+    - Ausencia en la Tabla de Resultados: Los valores NULL no se muestran en la tabla de resultados cuando se realiza una consulta. Esto significa que no verás filas con valores NULL en la salida, a menos que se realice una manipulación específica para mostrarlos.
+    - Manipulación de Valores NULL: Para manejar valores NULL en consultas, puedes usar funciones como "IS NULL" o "IS NOT NULL" para verificar si un valor es NULL o no.
+    - Ejemplo: Supongamos que tienes una tabla de clientes con una columna "fecha de nacimiento". Si no tienes la fecha de nacimiento de un cliente en particular, puedes ingresar NULL en esa celda para indicar que la información no está disponible.
+    - Importancia: El uso adecuado de NULL es esencial para reflejar con precisión la falta de información en una base de datos. Es importante entender cómo se manejan los valores NULL en consultas y cómo pueden afectar los resultados del análisis.
+    
+    Se puede combinar con IS NULL en la funcion WHERE para extraer valores que sean nulos
+    Se puede combinar con IS NOT NULL en la funcion WHERE para extraer valores no nulos
+    
+24,5. Booleanos
+  -los booleanos de siempre, se pueden utilizar en WHERE para extraer trues o falses. algo como
+  SELECT *
+  FROM empleados
+  WHERE activo = 'true';
+
+
+25. Operadores Lógicos en SQL:
+    -En SQL, los operadores lógicos permiten combinar condiciones para filtrar y recuperar datos de manera más precisa en las consultas. Los operadores lógicos más comunes son "AND", "OR" y "NOT".
+      - AND: El operador "AND" se utiliza para combinar múltiples condiciones en una consulta. Devolverá filas que cumplan con todas las condiciones especificadas.
+      - OR: El operador "OR" se utiliza para combinar múltiples condiciones en una consulta. Devolverá filas que cumplan al menos una de las condiciones especificadas.
+      - NOT: El operador "NOT" se utiliza para negar una condición en una consulta. Cambia el resultado de una condición verdadera a falsa, y viceversa.
+
+
+
+Conocimientos Prohibidos:
+
+1- Un "schema" (esquema) es una representación visual de cómo se organiza una base de datos, mostrando sus tablas, campos y llaves, y las flechas se utilizan para mostrar cómo las diferentes tablas están relacionadas.
+
+2- En SQL, es posible utilizar la función de agregación MIN(nombre_campo) para obtener el valor mínimo de un campo, por ejemplo, MIN(year) para obtener el año más pequeño en la tabla.
+    ...Sin embargo, si se utiliza una cláusula WHERE para filtrar los resultados, como WHERE year > 2000, en lugar de no mostrar ningún resultado (ya que el año más pequeño es 1993), la consulta saltará al año que cumpla con la condición especificada y mostrará ese resultado en lugar del valor mínimo.
+    ...Este comportamiento inesperado puede llevar a confusiones y malinterpretaciones de los datos, por lo que es importante tener en cuenta cómo afecta la cláusula WHERE a las funciones de agregación.
+
+3-Pasos para Procesar la Información
+-Question (Preguntar):En este paso, se define claramente la información necesaria de la base de datos. Esto equivale a formular una pregunta específica que se desea responder a través de una consulta. Esta pregunta puede variar desde cuántos estudiantes hay en una escuela hasta cuál fue la ganancia total de un negocio en un período determinado. La pregunta actúa como una guía inicial para diseñar la consulta y determinar qué datos se deben recolectar.
+    - Detalles: La etapa de "preguntar" es crucial para establecer el objetivo de la consulta. Al definir la pregunta, se determina el tipo de datos necesarios y los criterios de búsqueda que se aplicarán a la base de datos. Una pregunta bien formulada debe ser específica, clara y relevante para el propósito de análisis o toma de decisiones.
+    - Ejemplo: Supongamos que eres el gerente de una tienda minorista y deseas conocer cuántos productos de una categoría particular se vendieron el mes pasado. La pregunta sería: "¿Cuántos productos de la categoría X se vendieron en el mes de julio?"
+    - Importancia: Formular una pregunta precisa ayuda a evitar ambigüedades en el análisis y garantiza que se obtengan resultados relevantes. Esta fase inicial establece el contexto y la dirección para las fases posteriores de recolección, limpieza, análisis de insights y comunicación de resultados.
+
+-Collect (Recolectar): En esta fase, se obtienen los datos necesarios para responder a la pregunta formulada en el paso anterior. Una forma común de hacerlo es a través de APIs (Application Programming Interfaces), que permiten solicitar información a los servidores de una base de datos. Los servidores son computadoras que siempre están "escuchando" por pedidos de información. A través de una API, se pueden hacer solicitudes específicas y obtener respuestas estructuradas con los datos requeridos.
+    -API (Application Programming Interface): Una API es un conjunto de reglas y protocolos que permite que diferentes aplicaciones y sistemas se comuniquen entre sí. En el contexto de la recolección de datos, las APIs permiten a los desarrolladores solicitar y recibir datos de una base de datos o plataforma externa de manera estructurada. Ejemplos de APIs ampliamente utilizadas son las de Facebook, YouTube, Wikipedia y muchas otras plataformas en línea.
+    -Ejemplo: Siguiendo el ejemplo anterior, si deseas obtener información sobre cuántos productos de la categoría X se vendieron en el mes de julio en tu tienda minorista, podrías utilizar la API de tu sistema de ventas para solicitar esos datos específicos.
+    -Importancia: Las APIs simplifican la recolección de datos al proporcionar una forma estandarizada y eficiente de acceder a información en tiempo real desde diferentes fuentes. Esto es esencial para asegurar que los datos recopilados sean precisos y actualizados, lo que a su vez permite un análisis preciso y decisiones fundamentadas.
+
+    -Web Scraping: Otra técnica para recolectar datos es el web scraping, que implica extraer información de sitios web directamente. Utilizando herramientas y bibliotecas de programación, es posible acceder a contenido web y extraer datos estructurados de páginas HTML. Esto es especialmente útil cuando no hay una API disponible para acceder a la información deseada. Sin embargo, es importante considerar las políticas de uso de los sitios web y respetar los términos de servicio.
+    -Ejemplo: Si deseas recopilar los precios de productos de diferentes tiendas en línea para compararlos, podrías utilizar web scraping para extraer esta información directamente de las páginas de productos.
+    -Importancia: El web scraping es una técnica valiosa para acceder a datos específicos en la web que no están disponibles a través de APIs. Sin embargo, debe realizarse de manera ética y respetando los derechos de los sitios web y sus políticas.
+
+-Clean (Limpiar): Una vez que los datos han sido recolectados, es probable que no estén en perfecto estado para el análisis. La etapa de limpieza implica la identificación y corrección de cualquier problema, error o inconsistencia en los datos recopilados, con el objetivo de asegurar la precisión y la integridad en las etapas posteriores.
+    -Proceso de Limpieza: Durante el proceso de limpieza, se realizan diversas tareas, como eliminar duplicados, manejar valores faltantes (nulos), corregir errores tipográficos, estandarizar formatos y unidades, y asegurarse de que los datos estén en el rango apropiado y sean coherentes. Esto implica utilizar herramientas de programación y software para manipular y transformar los datos.
+    -Ejemplo: Si estás analizando datos de ventas y encuentras registros con valores de precio negativos (lo que es ilógico), tendrías que investigar y corregir estos errores. También podrías tratar los casos en los que la información de fechas está en diferentes formatos y estandarizarlos para un análisis uniforme.
+    -Importancia: La limpieza de datos es crucial para garantizar que los resultados del análisis y las decisiones basadas en ellos sean precisos y confiables. Datos mal limpiados pueden llevar a interpretaciones erróneas y decisiones incorrectas.
+    -Herramientas y Técnicas: Las bibliotecas de programación como Python y R ofrecen herramientas para la limpieza de datos, como funciones para manejar valores nulos, expresiones regulares para buscar patrones y funciones de transformación para ajustar formatos.
+
+-Insights (Perspectivas): Después de limpiar y preparar los datos, es el momento de realizar el análisis y extraer perspectivas valiosas. En esta etapa, se aplican técnicas de procesamiento y exploración de datos para descubrir patrones, tendencias, relaciones y otras informaciones significativas que respondan a la pregunta inicial y proporcionen una comprensión más profunda del tema en cuestión.
+    -Análisis de Datos: Aquí es donde las habilidades de análisis entran en juego. Se aplican algoritmos y métodos estadísticos para examinar los datos desde diferentes ángulos. Esto puede incluir el uso de gráficos y visualizaciones para representar los datos de manera comprensible.
+    -Descubrimiento de Patrones: A través del análisis, es posible identificar patrones interesantes que no eran evidentes inicialmente. Estos patrones pueden ser clave para tomar decisiones informadas y estratégicas.
+    -Toma de Decisiones: Las perspectivas obtenidas en esta etapa proporcionan la base para la toma de decisiones. Por ejemplo, si estás analizando los patrones de compra de tus clientes, podrías descubrir que ciertos productos tienen una mayor demanda en ciertos meses, lo que te permite ajustar tus estrategias de inventario y marketing.
+    -Ejemplo: Si estás analizando los datos de ventas de tu tienda en línea, podrías descubrir que hay un aumento en las ventas durante los fines de semana y que los productos de una categoría específica son los más populares. Esto podría llevarte a implementar ofertas especiales los fines de semana y aumentar la promoción de esa categoría en particular.
+    -Visualización de Datos: Las visualizaciones, como gráficos y tablas, son herramientas poderosas para comunicar las perspectivas obtenidas a audiencias no técnicas. Ayudan a resaltar patrones y tendencias de manera efectiva.
+
+-Communicate (Comunicar): Una vez que se han obtenido las perspectivas y conclusiones a partir del análisis de datos, es crucial comunicar esos resultados de manera efectiva a las partes interesadas. La etapa de comunicación implica presentar los hallazgos de una manera que sea comprensible y relevante para diferentes audiencias, ya sean expertos en el tema o no.
+    -Selección de Formato: Seleccionar el formato adecuado para comunicar los resultados es esencial. Esto podría ser a través de informes escritos, presentaciones visuales, tablas y gráficos, resúmenes ejecutivos u otros medios.
+    -Clara Interpretación: La comunicación debe incluir una interpretación clara y concisa de los hallazgos. Explicar los patrones, tendencias y relaciones identificados en el análisis, y cómo estos afectan a la pregunta original.
+    -Acciones y Recomendaciones: Además de presentar los resultados, es importante proporcionar recomendaciones concretas basadas en las perspectivas obtenidas. Estas recomendaciones pueden guiar la toma de decisiones y la planificación futura.
+    -Audiencia Considerada: La comunicación debe adaptarse a la audiencia a la que va dirigida. Debe ser accesible para aquellos que no son expertos en el campo, pero también lo suficientemente detallada para satisfacer a aquellos con un conocimiento más profundo.
+    -Impacto y Valor: La presentación de los resultados debe resaltar el impacto y el valor de las perspectivas obtenidas. Cómo estas perspectivas pueden influir en la toma de decisiones y mejorar el enfoque estratégico.
+
+-GROUP BY: esta casi siempre combinado con operaciones de agregacion (SUM, MAX, MIN, AVG)
+
+-el orden de comandos de datos de sql es el siguiente
+1- filtro (filtering) (WHERE)
+2- agrupar (grouping) (GROUP BY)
+3- agregacion (aggregation) (AVG, MIN, MAX, SUM)
+
+Por supuesto, aquí tienes una ampliación sobre la visualización de datos y su importancia para complementar las habilidades de SQL, en español:
+
+Importancia de la Visualización de Datos para Complementar las Habilidades de SQL:
+
+La visualización de datos es una herramienta fundamental que te permite presentar datos complejos en un formato visual, lo cual te ayuda a identificar tendencias, patrones e ideas que podrían no ser evidentes al mirar datos en bruto. Cuando se combina con las habilidades de SQL, la visualización de datos se convierte en una manera poderosa de comunicar y transmitir los resultados de tu análisis de datos de manera efectiva. Aquí te explicamos por qué la visualización de datos es el siguiente paso ideal para complementar tus habilidades en SQL:
+
+a. Mejor Comprensión: Las consultas de SQL te ayudan a recuperar y manipular datos, pero la visualización de datos lleva tu comprensión al siguiente nivel. Al crear gráficos, gráficos y representaciones visuales de los resultados de tus consultas SQL, puedes entender fácilmente las relaciones entre diferentes variables y la distribución de los datos.
+
+b. Detección de Tendencias y Valores Atípicos: La visualización de datos te permite identificar tendencias, anomalías y valores atípicos de manera sencilla. Un gráfico de líneas, por ejemplo, puede revelar la trayectoria ascendente o descendente de las ventas a lo largo del tiempo, mientras que un gráfico de dispersión puede resaltar puntos de datos inusuales que podrían requerir una investigación adicional.
+
+c. Comunicación Efectiva: La naturaleza visual de la visualización de datos facilita la comunicación de ideas complejas tanto a audiencias técnicas como no técnicas. En lugar de presentar filas de números, puedes ofrecer un resumen visual claro y conciso que transmita las conclusiones clave de tu análisis.
+
+d. Exploración y Descubrimiento: La visualización de datos fomenta la exploración y el descubrimiento. Puedes crear paneles interactivos que permitan a los usuarios interactuar con los datos, filtrar y profundizar en segmentos específicos, lo que revela ideas ocultas.
+
+e. Toma de Decisiones: Los datos visualizados ayudan a los tomadores de decisiones a comprender las implicaciones de sus elecciones. Cuando intentas tomar decisiones informadas basadas en conocimientos de SQL, tener una representación visual puede guiar la planificación estratégica de manera más efectiva.
+
+f. Contextualización: La visualización proporciona contexto para tus hallazgos en SQL. Por ejemplo, una visualización basada en mapas puede mostrar la distribución geográfica, lo que te ayuda a entender dónde ciertas tendencias o patrones son más predominantes.
+
+g. Narración: La visualización de datos te permite contar una historia con tus datos. Al organizar elementos visuales en una secuencia lógica, puedes guiar a la audiencia a través de tus hallazgos, explicaciones y conclusiones.
+
+Python como Herramienta de Visualización:
+-Los lenguajes de programación como Python ofrecen una amplia gama de bibliotecas (como Matplotlib, Seaborn, Plotly, entre otras) diseñadas específicamente para la visualización de datos. Estas bibliotecas brindan la flexibilidad de crear diferentes tipos de gráficos y representaciones, adaptándose a diversas necesidades de visualización de datos. La integración de Python con bases de datos SQL te permite obtener datos de manera fluida utilizando SQL y luego visualizarlos utilizando la biblioteca seleccionada.
+-En resumen, mientras que SQL te permite extraer y manipular datos, la visualización de datos te permite presentar, explorar y comprender las ideas ocultas en esos datos. Juntas, estas habilidades crean un conjunto completo de herramientas para el análisis de datos y la comunicación efectiva de tus hallazgos.
+-Al dominar tanto SQL como la visualización de datos, puedes mejorar tu capacidad para descubrir ideas significativas y comunicarlas persuasivamente, lo que te permitirá tomar decisiones informadas basadas en una comprensión integral de tus datos.
+
+Lista de Conocimientos Enviados por la Página:
+
+1. SQL allows you to work with data stored in a database.
+2. The SELECT query is used to get data from a table.
+3. Data can come from different sources.
+4. Data can be classified into structured or unstructured.
+5. Relational databases store information in interconnected tables.
+6. Keys connect tables in a relational database.
+7. You can query data FROM different tables in the database.
+8. Bugs cause error messages in queries.
+9. The schema of a database helps you avoid errors.
+10. SQL queries are organized in different lines so they are easier to read by humans.
+11. You can add comments to your code with double hyphens (--).
+12. You can add a block comment with /* ... */.
+13. SQL is a case-insensitive language.
+14. You can sort extracted data with the ORDER BY command.
+15. DESC sorts data in descending order (from largest to smallest, or Z to A).
+16. ASC sorts data in ascending order (from smallest to largest, or A to Z).
+17. LIMIT is used to reduce the number of records in a results table
+18. OFFSET skips a number of records
+19. ORDER BY can be combined with LIMIT and OFFSET.
+20. Data values can have different types
+21. String is the data type for text values
+22. You can do calculations with the values in numerical fields.
+23. WHERE is used to filter data based on specific conditions
+24. Comparison operations are needed to create different conditions
+25. String values in SQL code need to be surrounded by quotes.
+26. LIKE is used to search for patterns in string fields
+27. LIKE patterns are case-sensitive
+28. When a string field contains numbers, they are treated as characters.
+29. the underscore _ wildcard represents any single character in a pattern
+30. You can use UPPER() and LOWER() commands to perform case-insensitive pattern searches.
+31. you can use different comparison operators to define conditions
+32. conditions are needed to filter data.
+33. aggregation operations summarize data to produce 1 single numerical value
+34. MAX(), MIN(), COUNT(), SUM() and AVG() are examples of aggregation operations.
+35. aggregation and filtering operations can be combined in queries
+36. filtering operations are executed before aggregations
+37. aggregation operations are also referred to as functions.
+38. Raw data requires analysis
+39. The first step in data analysis is defining your question
+40. Data can come from different sources and you can use different techniques to collect your data
+41. GROUP BY organizes data into categories
+42. GROUP BY is frequently combined with aggregation
+43. You can combine WHERE with GROUP BY to filter data first, then group
+44. You can use HAVING to group data first, then filter
+45. Data quality issues can affect the accuracy of your data analysis
+46. You can use DISTINCT to fix data duplication
+47. NULL stands for missing data values
+48. Data values can be classified into different data types
+49. The boolean data type has two possible values: True or False

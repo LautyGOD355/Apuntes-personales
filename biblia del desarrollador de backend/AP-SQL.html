@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+  	<title>Mis apuntes - Conocimiento Teorico</title>
+  	<link rel="stylesheet" href="CSS/styling.css">
+  	<link rel="icon" href="Assets/Images/decoration/determinacion.png">
+</head>
+<body>
+	<img src="Assets/Images/decoration/determinacion.png" style="max-height: 40px; margin-top: 100px;">
+	<h1 class="title">Mesa de SQL</h1>
+	<h4 class="title">Índice</h4>
+	<div class="textBox">
+		<ul class="index">
+			<!--<li onclick="scrollToTextBox()"></li>-->
+		    <li onclick="scrollToTextBox(1)">SQL: Introducción y Fundamentos</li>
+		    <li onclick="scrollToTextBox(2)"><strong id="highlight">SELECT</strong>: Obtener Datos de una Tabla</li>
+		    <li onclick="scrollToTextBox(3)">Structured Data vs. Unstructured Data</li>
+		    <li onclick="scrollToTextBox(4)">Consultas SQL: Conceptos Clave</li>
+		    <li onclick="scrollToTextBox(5)">Relaciones en Bases de Datos Relacionales</li>
+		    <li onclick="scrollToTextBox(6)">Campos Claves en Bases de Datos</li>
+		    <li onclick="scrollToTextBox(7)">El Uso de <strong id="highlight">*</strong> en Consultas SQL</li>
+		    <li onclick="scrollToTextBox(8)"><strong id="highlight">--</strong>. Comentarios en Código SQL</li>
+		    <li onclick="scrollToTextBox(9)">Sensibilidad de Mayúsculas y Minúsculas</li>
+		    <li onclick="scrollToTextBox(10)">Ordenar Resultados con <strong id="highlight">ORDER BY</strong></li>
+		    <li onclick="scrollToTextBox(11)">Operadores Lógicos en SQL</li>
+		    <li onclick="scrollToTextBox(12)">La Cláusula <strong id="highlight">WHERE</strong></li>
+		    <li onclick="scrollToTextBox(13)">El Operador <strong id="highlight">LIKE</strong></li>
+		    <li onclick="scrollToTextBox(14)">Sensibilidad de Mayúsculas y Minúsculas en Patrones</li>
+    		<li onclick="scrollToTextBox(15)">Uso de Condiciones para Crear Nuevos Campos en SQL</li>
+		    <li onclick="scrollToTextBox(16)"><strong id="highlight">AVG, SUM, MAX</strong>. Funciones de Agregación en SQL</li>
+		    <li onclick="scrollToTextBox(17)">Agrupación de Datos con <strong id="highlight">GROUP BY</strong></li>
+		    <li onclick="scrollToTextBox(18)">La Cláusula <strong id="highlight">HAVING</strong></li>
+		    <li onclick="scrollToTextBox(19)">El Comando <strong id="highlight">DISTINCT</strong></li>
+		    <li onclick="scrollToTextBox(20)"><strong id="highlight">NULL</strong> en SQL: Ausencia de Valor</li>
+		    <li onclick="scrollToTextBox(21)">Booleanos en SQL</li>
+		    <li onclick="scrollToTextBox(22)">Operadores Lógicos: <strong id="highlight">AND, OR, y NOT</strong></li>
+		</ul>
+	</div>
+
+	<div class="textBox" id="textBox1">
+	    <h1>SQL: Introducción y Fundamentos</h1>
+	    <h3>¿Qué es SQL?</h3>
+	    <p>SQL (Structured Query Language) es un lenguaje de programación utilizado para administrar y manipular bases de datos relacionales. Permite interactuar con la información almacenada en una base de datos, realizar consultas, agregar, actualizar o eliminar datos, y mucho más.</p>
+
+	    <h3>¿Por qué SQL es Importante?</h3>
+	    <p>SQL desempeña un papel crucial en la gestión de datos en aplicaciones web y sistemas empresariales. Es ampliamente utilizado en la industria para:</p>
+	    <ul>
+	        <li>Recuperar información específica de una base de datos.</li>
+	        <li>Actualizar registros existentes.</li>
+	        <li>Insertar nuevos datos en una base de datos.</li>
+	        <li>Eliminar información no deseada.</li>
+	        <li>Crear y modificar estructuras de base de datos, como tablas e índices.</li>
+	    </ul>
+
+	    <h3>Características Clave de SQL</h3>
+	    <p>SQL se destaca por sus características clave:</p>
+	    <ul>
+	        <li>Consistencia y Estructura: Las bases de datos relacionales gestionadas con SQL mantienen una estructura coherente y organizada.</li>
+	        <li>Lenguaje Estándar: SQL es un lenguaje estándar reconocido internacionalmente, lo que facilita la comunicación entre diferentes sistemas de bases de datos.</li>
+	        <li>Flexibilidad: Permite la realización de consultas complejas para extraer datos específicos.</li>
+	    </ul>
+	</div>
+
+	<div class="textBox" id="textBox2">
+	    <h1>SELECT: Obtener Datos de una Tabla</h1>
+	    <h3>El Comando SELECT</h3>
+	    <p>El comando `SELECT` es esencial en SQL y se utiliza para obtener datos de una tabla. Puede recuperar información específica de una o varias tablas en una base de datos. Aquí hay algunos aspectos clave sobre `SELECT`:</p>
+
+	    <h3>Selección de Columnas</h3>
+	    <p>Con `SELECT`, puedes elegir qué columnas deseas recuperar de una tabla. Puedes seleccionar columnas específicas o incluso todas las columnas de la tabla.</p>
+	    
+	    <h3>Ejemplo de Uso</h3>
+	    <p>Un ejemplo sencillo de una consulta `SELECT` sería:</p>
+	    <pre id="highlight"><code>
+	    SELECT nombre, apellido
+	    FROM empleados;
+		</code></pre>
+	    <p>Esta consulta recuperaría los valores de las columnas "nombre" y "apellido" de la tabla "empleados".</p>
+
+	    <h3>Uso de Alias</h3>
+	    <p>Además, puedes usar alias para renombrar las columnas seleccionadas en los resultados de la consulta. Por ejemplo:</p>
+	    <pre id="highlight"><code>
+	    SELECT nombre AS NombreEmpleado, apellido AS ApellidoEmpleado
+	    FROM empleados;</code></pre>
+	    <p>Esto cambiaría los encabezados de las columnas en los resultados a "NombreEmpleado" y "ApellidoEmpleado".</p>
+	</div>
+
+	<div class="textBox" id="textBox3">
+	    <h1>Structured Data: Datos Estructurados</h1>
+	    <h3>¿Qué son los Datos Estructurados?</h3>
+	    <p>Los datos estructurados, también conocidos como 'structured data', son un tipo de información que se organiza de manera tabular y se almacena en filas y columnas dentro de una base de datos relacional.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Imagina una tabla llamada "empleados" con las siguientes columnas: "nombre", "apellido", "edad" y "cargo". Todos estos datos se consideran datos estructurados porque están organizados de manera ordenada en la tabla y cada columna tiene un nombre y un tipo de datos específico.</p>
+	
+	    <h3>¿Qué son los Datos No Estructurados?</h3>
+	    <p>Los datos no estructurados, también conocidos como 'unstructured data', son información que no se ajusta a un formato tabular y no se puede organizar fácilmente en filas y columnas dentro de una base de datos relacional.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Los datos no estructurados incluyen archivos de audio, video, imágenes, documentos complejos y otros tipos de información que no pueden ser representados de manera ordenada en una tabla de base de datos.</p>
+	</div>
+
+	<div class="textBox" id="textBox4">
+	    <h1>Consultas de SQL: Concepto Clave</h1>
+	    <h3>¿Qué son las Consultas en SQL?</h3>
+	    <p>Las consultas en SQL son instrucciones escritas en lenguaje SQL que se envían a una base de datos para recuperar, actualizar o manipular datos. Estas consultas permiten realizar operaciones específicas en la base de datos, como buscar información, filtrar resultados y combinar datos de diferentes tablas.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Un ejemplo de consulta SQL podría ser: "SELECT nombre, apellido FROM clientes WHERE edad > 25". Esta consulta seleccionaría los nombres y apellidos de clientes cuya edad sea mayor que 25 años. Las consultas son esenciales para interactuar con una base de datos de manera efectiva.</p>
+	</div>
+
+	<div class="textBox" id="textBox5">
+	    <h1>Bases de Datos Relacionales</h1>
+	    <h3>¿Qué son las Bases de Datos Relacionales?</h3>
+	    <p>Las bases de datos relacionales son sistemas de gestión de bases de datos que utilizan tablas para organizar la información. Estas tablas pueden tener relaciones entre sí mediante el uso de claves primarias y claves foráneas, lo que facilita el acceso y la gestión de datos.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Un ejemplo de una base de datos relacional podría ser una base de datos de una tienda en línea, donde hay tablas para productos, clientes, pedidos y más. Estas tablas se relacionan para mantener la información organizada y permitir consultas complejas.</p>
+	</div>
+
+	<div class="textBox" id="textBox6">
+	    <h1>Campos Clave en Bases de Datos Relacionales</h1>
+	    <h3>¿Qué son los Campos Clave?</h3>
+	    <p>Los campos clave son columnas especiales en una tabla que contienen valores únicos para cada fila. Estos valores permiten identificar de manera única cada registro en la tabla y establecer relaciones entre diferentes tablas en una base de datos relacional.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>En una tabla de clientes, el número de identificación del cliente podría ser un campo clave, lo que garantiza que cada cliente tenga un valor único en esa columna. Esto facilita la búsqueda y la vinculación de información en toda la base de datos.</p>
+	</div>
+
+	<div class="textBox" id="textBox7">
+	    <h1>Uso de Asterisco (*) en SQL</h1>
+	    <h3>¿Qué Significa el Asterisco (*)?</h3>
+	    <p>El símbolo asterisco (*) se utiliza en SQL como un comodín para seleccionar todas las columnas de una tabla en una consulta sin tener que enumerar cada columna individualmente. Esto ahorra tiempo y simplifica las consultas.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>En una consulta SQL, "SELECT * FROM productos" seleccionaría todas las columnas de la tabla de productos. Es útil cuando se necesita recuperar toda la información de una tabla sin especificar cada columna por separado.</p>
+	</div>
+
+	<div class="textBox" id="textBox8">
+	    <h1>Comentarios en Código SQL</h1>
+	    <h3>¿Por qué usar Comentarios en Código SQL?</h3>
+	    <p>Los comentarios en el código SQL son útiles para agregar explicaciones o notas que ayuden a comprender el propósito de una consulta o instrucción. Estos comentarios no afectan la ejecución de las consultas y son especialmente valiosos en código complejo o colaborativo.</p>
+
+	    <h3>Ejemplo</h3>
+	    <pre id="highlight"><code>
+	-- Este es un comentario de una sola línea en SQL
+	SELECT nombre, apellido
+	FROM clientes
+	WHERE edad > 25;
+	    </code></pre>
+	</div>
+
+	<div class="textBox" id="textBox9">
+	    <h1>Sensibilidad de Mayúsculas y Minúsculas en SQL</h1>
+	    <h3>¿Qué Significa la Sensibilidad de Mayúsculas y Minúsculas en SQL?</h3>
+	    <p>SQL es un lenguaje que no distingue entre mayúsculas y minúsculas (case-insensitive), lo que significa que las palabras clave y los nombres de objetos en SQL pueden escribirse en mayúsculas o minúsculas indistintamente. Esto simplifica la escritura de consultas, ya que no es necesario preocuparse por la capitalización.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>En SQL, "SELECT" y "select" se tratan de la misma manera y se pueden usar de forma intercambiable. Esto significa que las siguientes dos consultas son equivalentes:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre FROM clientes;
+	select nombre from clientes;
+	    </code></pre>
+	</div>
+
+	<div class="textBox" id="textBox10">
+	    <h1>Ordenar Resultados con "ORDER BY"</h1>
+	    <h3>¿Qué es "ORDER BY" en SQL?</h3>
+	    <p>"ORDER BY" es una cláusula en SQL que se utiliza para organizar los resultados de una consulta en un orden específico. Puede ordenar los resultados en orden ascendente (de menor a mayor) o descendente (de mayor a menor) basándose en los valores de una o más columnas.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que tenemos una tabla de productos y deseamos mostrarlos en orden alfabético por su nombre. La consulta SQL sería:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, precio
+	FROM productos
+	ORDER BY nombre ASC;
+	    </code></pre>
+	    <p>Esto mostraría la lista de productos ordenados alfabéticamente por sus nombres en orden ascendente.</p>
+	</div>
+
+	<div class="textBox" id="textBox11">
+	    <h1>Operadores Lógicos en SQL</h1>
+	    <h3>¿Qué son los Operadores Lógicos en SQL?</h3>
+	    <p>En SQL, los operadores lógicos permiten combinar condiciones para filtrar y recuperar datos de manera más precisa en las consultas. Los operadores lógicos más comunes son "AND", "OR" y "NOT".</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que queremos seleccionar todos los clientes que sean mayores de 25 años y vivan en Nueva York. Podríamos usar el operador "AND" en la cláusula "WHERE" de la siguiente manera:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, edad, ciudad
+	FROM clientes
+	WHERE edad > 25 AND ciudad = 'Nueva York';
+	    </code></pre>
+	    <p>Esta consulta seleccionaría clientes que cumplan ambas condiciones: tener más de 25 años y vivir en Nueva York.</p>
+	</div>
+
+
+	<div class="textBox" id="textBox12">
+	    <h1>La Cláusula "WHERE" en SQL</h1>
+	    <h3>¿Qué es la Cláusula "WHERE" en SQL?</h3>
+	    <p>La cláusula "WHERE" se utiliza en SQL para filtrar registros en una consulta. Permite especificar condiciones que deben cumplirse para que un registro sea incluido en los resultados. Es fundamental para recuperar datos específicos de una tabla.</p>
+
+	    <h3>Ejemplos de Uso</h3>
+
+	    <h4>Filtrar por Valor Mayor que</h4>
+	    <p>Imagina que deseamos seleccionar todos los productos cuyo precio sea superior a $50. La consulta SQL sería:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, precio
+	FROM productos
+	WHERE precio > 50;
+	    </code></pre>
+	    <p>Esta consulta devolvería los productos que tienen un precio superior a $50.</p>
+
+	    <h4>Filtrar por Valor Igual a</h4>
+	    <p>Si queremos obtener información sobre un producto específico, como uno con un ID de producto igual a 101, la consulta sería:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, precio
+	FROM productos
+	WHERE id_producto = 101;
+	    </code></pre>
+	    <p>Esta consulta seleccionaría el producto con ID 101.</p>
+
+	    <h4>Filtrar por Texto</h4>
+	    <p>Para buscar productos cuyo nombre contenga la palabra "camiseta", puedes usar el operador "LIKE" de la siguiente manera:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre
+	FROM productos
+	WHERE nombre LIKE '%camiseta%';
+	    </code></pre>
+	    <p>Esto seleccionaría productos con nombres que contienen la palabra "camiseta" en cualquier posición.</p>
+
+	    <h4>Filtrar por Valor NULL</h4>
+	    <p>Si deseas encontrar registros donde un campo esté vacío, puedes usar "IS NULL". Por ejemplo, para encontrar empleados sin un número de teléfono registrado:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre
+	FROM empleados
+	WHERE telefono IS NULL;
+	    </code></pre>
+	    <p>Esto seleccionará empleados sin número de teléfono.</p>
+
+	    <h4>Filtrar por Valor NO NULL</h4>
+	    <p>Para encontrar registros con un valor en un campo, puedes usar "IS NOT NULL". Por ejemplo, para encontrar empleados con dirección de correo electrónico:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre
+	FROM empleados
+	WHERE correo_electronico IS NOT NULL;
+	    </code></pre>
+	    <p>Esto seleccionará empleados con dirección de correo electrónico registrada.</p>
+
+		<h4>Filtrar por Valor Menor que o Igual a</h4>
+		<pre id="highlight"><code>
+	SELECT nombre, precio
+	FROM productos
+	WHERE precio <= 30;
+		</code></pre>
+
+		<h4>Filtrar por Rango de Fechas</h4>
+		<pre id="highlight"><code>
+	SELECT nombre, fecha_compra
+	FROM pedidos
+	WHERE fecha_compra BETWEEN '2023-01-01' AND '2023-12-31';
+		</code></pre>
+
+		<h4>Filtrar por Varias Condiciones</h4>
+		<pre id="highlight"><code>
+	SELECT nombre, categoria
+	FROM productos
+	WHERE precio > 100 AND categoria = 'Electrónica';
+		</code></pre>
+
+		<h4>Filtrar por Valores en una Lista</h4>
+		<pre id="highlight"><code>
+	SELECT nombre, categoria
+	FROM productos
+	WHERE categoria IN ('Electrónica', 'Ropa', 'Juguetes');
+		</code></pre>
+
+		<h4>Filtrar por Valores que no Están en una Lista</h4>
+		<pre id="highlight"><code>
+	SELECT nombre, categoria
+	FROM productos
+	WHERE categoria NOT IN ('Electrónica', 'Ropa', 'Juguetes');
+		</code></pre>
+
+		<h4>Filtrar Usando Wildcards</h4>
+		<pre id="highlight"><code>
+	SELECT nombre
+	FROM empleados
+	WHERE nombre LIKE 'M%';
+		</code></pre>
+
+		<h4>Filtrar por Fechas Anteriores</h4>
+		<pre id="highlight"><code>
+	SELECT nombre, fecha_nacimiento
+	FROM personas
+	WHERE fecha_nacimiento < '2000-01-01';
+		</code></pre>
+
+		<h4>Filtrar por Texto y Otra Condición</h4>
+		<pre id="highlight"><code>
+	SELECT nombre, categoria
+	FROM productos
+	WHERE nombre LIKE '%oferta%' AND precio < 50;
+		</code></pre>
+	</div>
+
+
+	<div class="textBox" id="textBox13">
+	    <h1>El Operador "LIKE" en SQL</h1>
+	    <h3>¿Qué es el Operador "LIKE" en SQL?</h3>
+	    <p>El operador "LIKE" se utiliza en SQL para buscar patrones en los datos de una columna. Es especialmente útil cuando deseas buscar valores que contienen una cadena específica o patrón en una columna.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que deseamos encontrar todos los nombres de productos que contienen la palabra "cámara". Podemos usar "LIKE" de la siguiente manera:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre
+	FROM productos
+	WHERE nombre LIKE '%cámara%';
+	    </code></pre>
+	    <p>Esta consulta seleccionará todos los productos cuyos nombres contengan la palabra "cámara".</p>
+	</div>
+
+	<div class="textBox" id="textBox14">
+	    <h1>Sensibilidad de Mayúsculas y Minúsculas en Patrones</h1>
+	    <h3>¿Qué Debes Saber sobre la Sensibilidad de Mayúsculas y Minúsculas en Patrones?</h3>
+	    <p>Algunos patrones en SQL pueden ser sensibles a las mayúsculas y minúsculas, lo que significa que distinguen entre letras mayúsculas y minúsculas. Sin embargo, puedes realizar búsquedas sin tener en cuenta la capitalización utilizando las funciones "LOWER()" y "UPPER()".</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Para buscar títulos en una tabla de libros que contengan la palabra "cooking" sin importar la capitalización, puedes hacer lo siguiente:</p>
+	    <pre id="highlight"><code>
+	SELECT title
+	FROM books
+	WHERE LOWER(title) LIKE '%cooking%';
+	    </code></pre>
+	    <p>Esta consulta ignorará la capitalización al buscar títulos que contengan "cooking".</p>
+	</div>
+
+	<div class="textBox" id="textBox15">
+	    <h1>Uso de Condiciones para Crear Nuevos Campos en SQL</h1>
+	    <h3>¿Cómo se Usan Condiciones para Crear Nuevos Campos en SQL?</h3>
+	    <p>En SQL, puedes utilizar condiciones para verificar valores en una columna y crear nuevos campos basados en los resultados. Esto se hace usando la sintaxis "condición AS nombre_campo_nuevo".</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que deseamos crear un nuevo campo llamado "result" que contenga valores booleanos (T o F) basados en si el año de una película es mayor que 2000. La consulta sería:</p>
+	    <pre id="highlight"><code>
+	SELECT year, year > 2000 AS result
+	FROM movies;
+	    </code></pre>
+	    <p>Esto creará un nuevo campo "result" con valores "T" o "F" dependiendo de si el año es mayor que 2000.</p>
+	</div>
+
+	<div class="textBox" id="textBox16">
+	    <h1>AVG, SUM, MAX. Funciones de Agregación en SQL</h1>
+	    <h3>¿Qué son las Funciones de Agregación en SQL?</h3>
+	    <p>Las funciones de agregación en SQL son utilizadas para realizar cálculos en conjuntos de datos. Estas funciones operan en múltiples filas para proporcionar un solo resultado. Algunas funciones de agregación comunes incluyen "SUM" (suma), "AVG" (promedio), "COUNT" (conteo) y "MAX" (máximo).</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que queremos calcular la suma de los valores en la columna "cantidad_vendida" de una tabla de ventas. La consulta SQL sería:</p>
+	    <pre id="highlight"><code>
+	SELECT SUM(cantidad_vendida) AS total_vendido
+	FROM ventas;
+	    </code></pre>
+	    <pre id="highlight"><code>
+	-- Suma de los precios de productos vendidos
+	SELECT SUM(precio) AS total_ventas
+	FROM ventas;
+		</code></pre>
+		<pre id="highlight"><code>
+	-- Cálculo del promedio de edades de empleados
+	SELECT AVG(edad) AS promedio_edad
+	FROM empleados;
+		</code></pre>
+		<pre id="highlight"><code>
+	-- Valor máximo y mínimo de precios de productos
+	SELECT MAX(precio) AS precio_maximo, MIN(precio) AS precio_minimo
+	FROM productos;
+		</code></pre>
+		<pre id="highlight"><code>
+	-- Conteo total de registros de usuarios
+	SELECT COUNT(*) AS total_registros
+	FROM usuarios;
+		</code></pre>
+
+	    <p>Esto nos dará el total de la cantidad vendida en todas las filas de la tabla de ventas.</p>
+	</div>
+
+	<div class="textBox" id="textBox17">
+	    <h1>Agrupación de Datos con GROUP BY</h1>
+	    <h3>¿Qué es la Agrupación de Datos con GROUP BY en SQL?</h3>
+	    <p>La cláusula "GROUP BY" en SQL se utiliza para agrupar filas que tienen los mismos valores en una o más columnas. Generalmente se combina con funciones de agregación como SUM, COUNT, AVG, MAX o MIN para realizar cálculos sobre los grupos de datos.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que tenemos una tabla de empleados y queremos saber cuántos empleados hay en cada departamento:</p>
+	    <pre id="highlight"><code>
+	SELECT departamento, COUNT(*) as cantidad_empleados
+	FROM empleados
+	GROUP BY departamento;
+	    </code></pre>
+	    <p>Esta consulta devolvería el número de empleados en cada departamento.</p>
+	</div>
+
+	<div class="textBox" id="textBox18">
+	    <h1>La Cláusula HAVING en SQL</h1>
+	    <h3>¿Qué es la Cláusula HAVING en SQL?</h3>
+	    <p>La cláusula "HAVING" en SQL se utiliza junto con la cláusula "GROUP BY" para filtrar grupos de datos después de haberse aplicado una función de agregación. Permite establecer condiciones en los resultados de las funciones de agregación.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que deseamos encontrar los departamentos con un promedio de salario superior a $60,000:</p>
+	    <pre id="highlight"><code>
+	SELECT departamento, AVG(salario) as salario_promedio
+	FROM empleados
+	GROUP BY departamento
+	HAVING AVG(salario) > 60000;
+	    </code></pre>
+	    <p>Esta consulta devolvería los departamentos que cumplen con la condición de tener un salario promedio superior a $60,000.</p>
+	</div>
+
+	<div class="textBox" id="textBox19">
+	    <h1>El Comando DISTINCT en SQL</h1>
+	    <h3>¿Qué es el Comando DISTINCT en SQL?</h3>
+	    <p>El comando "DISTINCT" en SQL se utiliza para eliminar valores duplicados en una consulta y garantizar que solo se muestren resultados únicos. Se coloca al lado del operador "SELECT" y afecta a una o más columnas en la salida.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que tenemos una tabla de clientes y deseamos obtener una lista de ciudades únicas:</p>
+	    <pre id="highlight"><code>
+	SELECT DISTINCT ciudad
+	FROM clientes;
+	    </code></pre>
+	    <p>Esta consulta mostrará una lista de ciudades únicas, eliminando cualquier repetición.</p>
+	</div>
+
+	<div class="textBox" id="textBox20">
+	    <h1>NULL en SQL: Ausencia de Valor</h1>
+	    <h3>¿Qué es NULL en SQL?</h3>
+	    <p>En SQL, "NULL" se utiliza para indicar la ausencia de un valor en una columna de datos. Representa la condición en la que la información no está disponible o no se ha ingresado en la base de datos para un campo específico.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que tenemos una tabla de productos y algunos productos no tienen un valor asignado para su descripción:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, descripcion
+	FROM productos
+	WHERE descripcion IS NULL;
+	    </code></pre>
+	    <p>Esta consulta devolverá los productos que tienen un valor NULL en la columna de descripción.</p>
+	</div>
+
+	<div class="textBox" id="textBox21">
+	    <h1>Booleanos en SQL</h1>
+	    <h3>¿Cómo se utilizan los Booleanos en SQL?</h3>
+	    <p>En SQL, los booleanos son valores lógicos que representan "verdadero" o "falso". Se utilizan en las cláusulas "WHERE" para realizar filtrados basados en condiciones lógicas.</p>
+
+	    <h3>Ejemplo</h3>
+	    <p>Supongamos que deseamos encontrar todos los productos que están en stock (cantidad mayor que cero):</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, cantidad
+	FROM productos
+	WHERE cantidad > 0;
+	    </code></pre>
+	    <p>Esta consulta devolverá los productos que tienen una cantidad mayor que cero en stock, lo que representa "verdadero".</p>
+	</div>
+
+	<div class="textBox" id="textBox22">
+	    <h1>Operadores Lógicos en SQL: AND, OR, y NOT</h1>
+	    <h3>¿Qué son los Operadores Lógicos en SQL?</h3>
+	    <p>En SQL, los operadores lógicos son herramientas esenciales que permiten combinar y evaluar condiciones en las consultas. Los operadores lógicos más comunes son "AND", "OR" y "NOT", y desempeñan un papel crucial en la filtración precisa de datos.</p>
+
+	    <h3>Operador "AND"</h3>
+	    <p>El operador "AND" se utiliza para combinar múltiples condiciones en una consulta. Su funcionamiento es simple: devolverá filas que cumplan con todas las condiciones especificadas. En otras palabras, todas las condiciones unidas por "AND" deben ser verdaderas para que una fila se incluya en los resultados.</p>
+
+	    <h3>Ejemplo de Operador "AND"</h3>
+	    <p>Supongamos que deseamos encontrar productos que estén en stock y tengan un precio inferior a $50:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, cantidad
+	FROM productos
+	WHERE cantidad > 0 AND precio < 50;
+	    </code></pre>
+	    <p>Esta consulta devolverá productos que cumplen ambas condiciones: tener una cantidad mayor que cero y un precio inferior a $50.</p>
+
+	    <h3>Operador "OR"</h3>
+	    <p>El operador "OR" se utiliza para combinar múltiples condiciones en una consulta. A diferencia de "AND", "OR" devolverá filas que cumplan al menos una de las condiciones especificadas. En otras palabras, si cualquiera de las condiciones es verdadera, la fila se incluirá en los resultados.</p>
+
+	    <h3>Ejemplo de Operador "OR"</h3>
+	    <p>Supongamos que deseamos encontrar productos que estén en stock o tengan un precio inferior a $50:</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, cantidad
+	FROM productos
+	WHERE cantidad > 0 OR precio < 50;
+	    </code></pre>
+	    <p>Esta consulta devolverá productos que cumplen al menos una de las condiciones: tener una cantidad mayor que cero o un precio inferior a $50.</p>
+
+	    <h3>Operador "NOT"</h3>
+	    <p>El operador "NOT" se utiliza para negar una condición en una consulta. Cambia el resultado de una condición verdadera a falsa, y viceversa. Es útil cuando deseas encontrar registros que no cumplan con una cierta condición.</p>
+
+	    <h3>Ejemplo de Operador "NOT"</h3>
+	    <p>Supongamos que deseamos encontrar productos que no estén agotados (cantidad no igual a cero):</p>
+	    <pre id="highlight"><code>
+	SELECT nombre, cantidad
+	FROM productos
+	WHERE NOT cantidad = 0;
+	    </code></pre>
+	    <p>Esta consulta devolverá productos cuya cantidad no sea igual a cero, es decir, que no estén agotados.</p>
+	</div>
+
+
+	<!--<div class="textBox" id="textBox"></div>-->
+	<img src="Assets/Images/decoration/determinacion.png" style="max-height: 40px; margin-bottom: 200px;">
+	<script>
+		function scrollToTextBox(index) {
+  			let targetDiv = document.getElementById('textBox' + index);
+  			if (targetDiv) {
+    			let yOffset = targetDiv.getBoundingClientRect().top + window.pageYOffset;
+    			window.scrollTo({ top: yOffset, behavior: 'smooth' });
+  			}
+		}
+	</script>
+</body>
+</html>

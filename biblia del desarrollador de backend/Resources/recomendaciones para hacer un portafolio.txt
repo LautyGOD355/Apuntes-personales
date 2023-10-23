@@ -1,0 +1,21 @@
+portfalio
+- trabajo realizado hasta ahora
+- habilidades tecnicas (comodidad, que me gustaria aprender)
+no tratar de colocar 2 o mas, aprender de todo indicador de que me cuesta concentrarme
+- hobbies (piano)
+- utilizar plantilla (que sea responsivo, y que no sea feo)
+
+
+que hice?
+
+- michelle newspapers
+- sitio de apuntes
+- lipshop
+-
+
+ideas
+crear el portafolio con una presentacion de mi mismo, de lo que logre y de lo que puedo hacer
+conocimientos en html, poco de css, explicar que en javascript logre muchas cosas, php y sql es a lo que apunto
+agregar MN como mi mayor proyecto, destacar las cosas que hice
+agregar lipshop, trabajar en lipshop con muchas ganas
+ 

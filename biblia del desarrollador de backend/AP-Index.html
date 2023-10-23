@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+  	<title>Mis apuntes - Index</title>
+  	<link rel="stylesheet" href="CSS/styling.css">
+  	<link rel="icon" href="Assets/Images/decoration/determinacion.png">
+</head>
+<body>
+	<img src="Assets/Images/decoration/determinacion.png" style="max-height: 40px; margin-top: 100px;">
+	<h1 class="title">Mis apuntes para convertirse en el mejor desarrollador de backend.</h1>
+	<h4 class="title">Índice</h4>
+        <div class="social-skills-section">
+	        <p class="section-summary">Elegi el conocimiento que deseas refrescar</p>
+            <div class="social-skill-box">
+                <img src="Assets/Images/index-images/AP-conocimiento.png" alt="Conocimiento Tecnico Del Backend">
+                <p>Conocimiento Tecnico Del Backend</p>
+            </div>
+            <div class="social-skill-box">
+                <img src="Assets/Images/index-images/AP-conocimiento.png" alt="SQL">
+                <p>Mesa de SQL</p>
+            </div>
+            <div class="social-skill-box">
+                <img src="Assets/Images/index-images/AP-conocimiento.png" alt="php">
+                <p>We don't go to php</p>
+            </div>
+            <div class="social-skill-box">
+                <img src="Assets/Images/index-images/AP-conocimiento.png" alt="Resolución de conflictos">
+                <p>no se me ocurre</p>
+            </div>
+            <div class="social-skill-box">
+                <img src="Assets/Images/index-images/AP-conocimiento.png" alt="Liderazgo flexible">
+                <p>imagina que aca hay un apunte importante</p>
+            </div>
+        </div>
+
+	<div class="textBox">
+		
+	</div>
+	<!--<div class="textBox" id="textBox"></div>-->
+	<img src="Assets/Images/decoration/determinacion.png" style="max-height: 40px; margin-bottom: 200px;">
+	<script>
+		function scrollToTextBox(index) {
+  			let targetDiv = document.getElementById('textBox' + index);
+  			if (targetDiv) {
+    			let yOffset = targetDiv.getBoundingClientRect().top + window.pageYOffset;
+    			window.scrollTo({ top: yOffset, behavior: 'smooth' });
+  			}
+		}
+	</script>
+</body>
+</html>

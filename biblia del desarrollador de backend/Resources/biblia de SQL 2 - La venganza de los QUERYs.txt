@@ -1,0 +1,100 @@
+LA BIBLIA DE SQL ¡2!; LA VENGANZA DE LOS QUERYS
+
+1- Funciones de Cadena
+    - SQL ofrece una serie de funciones útiles para trabajar con datos de texto (o cadenas, como se les llama en programación).
+    
+    - Por ejemplo, la función CONCAT permite combinar texto de múltiples columnas en una.
+    
+        - Ejemplo:
+          ```
+          SELECT CONCAT(primerNombre, apellido) AS nombre
+          FROM Clientes
+          ```
+          - Como puedes ver, la columna resultante "nombre" combina los primeros nombres y apellidos de los clientes.
+    
+    - CONCATENAR
+        - La función CONCATENAR puede tomar cualquier número de argumentos y combinarlos en el resultado.
+        
+        - Ejemplo:
+          ```
+          SELECT CONCAT(primerNombre, ' ', apellido) AS nombre
+          FROM Clientes
+          ```
+    
+    - MINÚSCULAS Y MAYÚSCULAS
+        - La función MINÚSCULAS convierte el texto en la columna proporcionada a minúsculas.
+        
+        - Ejemplo:
+          ```
+          SELECT MINÚSCULAS(primerNombre) FROM Clientes
+          ```
+        - De manera similar, la función MAYÚSCULAS convierte el texto a mayúsculas.
+        
+          ```
+          SELECT MAYÚSCULAS(primerNombre) FROM Clientes
+          ```
+    
+    - SUBSTRING
+        - La función SUBSTRING te permite extraer parte del texto en una columna.
+        
+        - Toma la posición de inicio y el número de caracteres que deseas extraer.
+        
+        - Ejemplo:
+          ```
+          SELECT SUBSTRING(primerNombre, 1, 3) 
+          FROM Clientes
+          ```
+    
+    - REEMPLAZAR
+        - La función REEMPLAZAR reemplaza todas las ocurrencias de una cadena dada por otra.
+        
+        - Ejemplo:
+          ```
+          SELECT primerNombre, apellido, 
+          REEMPLAZAR(ciudad, 'Nueva York', 'NY') 
+          FROM Clientes
+          ```
+    
+    -Continuación de Funciones
+        - Podemos combinar múltiples funciones en una sola consulta.
+    
+            - Ejemplo:
+              ```
+              SELECT CONCAT(
+                 SUBSTRING(primerNombre, 1, 1), 
+                 '. ', 
+                 MAYÚSCULAS(apellido)) AS nombre
+              FROM Clientes
+              ```
+              - Usamos la función SUBSTRING para tomar la primera letra del primer nombre y combinarla con el apellido en mayúsculas.
+        
+    - Conclusiones de la Lección
+        - Aquí tienes un resumen rápido:
+            - CONCATENAR se utiliza para combinar múltiples cadenas en una columna.
+            
+            - MINÚSCULAS y MAYÚSCULAS convierten el texto a minúsculas y mayúsculas, respectivamente.
+            
+            - SUBSTRING se utiliza para extraer parte del texto.
+            
+            - REEMPLAZAR se utiliza para reemplazar una cadena por otra en el texto
+
+    - Ejercicio Generador de Correos Electrónicos
+        - Necesitas generar correos electrónicos para los empleados.
+        
+        - El formato del correo electrónico es primerNombre.apellido@empresa.com.
+        
+        - Por ejemplo, para Juan Pérez, el correo sería: juan.perez@empresa.com.
+        
+        - Ten en cuenta que el correo debe estar en minúsculas.
+        
+        - Escribe una consulta para crear las direcciones de correo electrónico para todos los empleados en la tabla y muestra el resultado en una nueva columna llamada "correo electrónico".
+        
+        - Ordena el resultado por la columna de correo electrónico en orden ascendente.
+        
+        - Tu respuesta:
+          ```
+          SELECT CONCAT(LOWER(primerNombre), '.', LOWER(apellido), '@empresa.com') AS "correo electrónico"
+          FROM Empleados
+          ORDER BY "correo electrónico" ASC;
+          ```
+          

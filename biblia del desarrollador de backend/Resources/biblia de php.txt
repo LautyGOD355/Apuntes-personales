@@ -1,0 +1,46 @@
+Biblia de PHP, por lautarou
+
+1. Variables: En PHP, las variables se utilizan para almacenar y manipular datos. Se declaran con el prefijo `$` seguido de un nombre y pueden contener valores numéricos, cadenas de texto, booleanos, arrays y otros tipos de datos.
+
+2. Concatenación de strings: Para unir dos cadenas de texto en PHP, se utiliza el operador de concatenación `.`, que permite combinar múltiples strings en uno solo.
+
+3. Declaración de variables globales: Las variables globales son aquellas que se pueden acceder y utilizar en cualquier parte del programa, incluyendo funciones y clases. Para utilizar una variable global dentro de una función, se utiliza la palabra clave `global` seguida del nombre de la variable.
+
+4. Variables variables: En PHP, se pueden crear variables cuyos nombres se generan dinámicamente utilizando el contenido de otras variables. Por ejemplo, si `$var = "nombre"`, se puede crear una variable llamada `$nombre` utilizando `$var` como `$nombre = "John";`.
+
+5. Operadores aritméticos: PHP proporciona operadores aritméticos para realizar operaciones matemáticas básicas, como suma (`+`), resta (`-`), multiplicación (`*`) y división (`/`).
+
+6. Operadores de comparación: Los operadores de comparación en PHP se utilizan para comparar dos valores y devolver un resultado booleano (`true` o `false`). Algunos ejemplos de operadores de comparación son `>`, `<`, `>=`, `<=`, `==` (igualdad), y `!=` (diferencia).
+
+7. Operadores lógicos: Los operadores lógicos se utilizan para combinar o negar condiciones booleanas. Algunos operadores lógicos comunes en PHP son `and`, `or`, `xor` (o exclusivo) y `!` (negación).
+
+8. Arrays: Los arrays en PHP son estructuras de datos que permiten almacenar múltiples valores en una sola variable. Los elementos en un array se acceden utilizando un índice numérico, y pueden contener cualquier tipo de dato, incluyendo números, cadenas de texto, booleanos y otros arrays.
+
+9. Arrays asociativos: Los arrays asociativos en PHP permiten asociar claves alfanuméricas con valores. En lugar de utilizar índices numéricos, se utilizan claves para acceder a los elementos del array.
+
+10. Estructuras de control: Las estructuras de control en PHP permiten controlar el flujo del programa. Algunas de ellas son:
+    - `if`, `else`, `elseif`: Se utilizan para tomar decisiones basadas en condiciones.
+    - `switch`: Se utiliza para evaluar una expresión y ejecutar diferentes bloques de código según el valor de la expresión.
+    - `for`: Se utiliza para ejecutar un bloque de código un número específico de veces.
+    - `foreach`: Se utiliza para iterar sobre todos los elementos de un array o un objeto.
+    - `while`, `do-while`: Se utilizan para ejecutar un bloque de código mientras se cumpla una condición.
+
+11. Funciones: Las funciones en PHP permiten agrupar un conjunto de instrucciones que se pueden reutilizar en diferentes partes del programa. Las funciones pueden aceptar argumentos y pueden devolver un valor. Se definen utilizando la palabra clave `function`.
+
+12. Inclusión de archivos PHP: Para incluir el contenido de otro archivo PHP en el archivo actual, se utilizan las funciones `include` o `require`. Esto es útil para reutilizar código en diferentes archivos y evitar duplicaciones.
+
+13. Variables de sesión: Las variables de sesión en PHP permiten almacenar y acceder a datos específicos del usuario a través de múltiples páginas web. Se utiliza la función `session_start()` para iniciar una sesión y se puede acceder a las variables de sesión a través de la variable superglobal `$_SESSION`.
+
+14. Cookies: Las cookies son pequeños archivos que se almacenan en la computadora del usuario y se utilizan para identificar al usuario o para almacenar información relacionada con la sesión. En PHP, se pueden crear cookies utilizando la función `setcookie()` y se pueden configurar varios parámetros, como el nombre, el valor, la caducidad, la ruta y el dominio.
+
+15. Declaración de clases: Para declarar una clase en PHP, se utiliza la palabra clave `class`, seguida del nombre de la clase. Las clases permiten encapsular propiedades y métodos relacionados en una estructura organizada.
+
+16. Herencia de clases: La herencia de clases en PHP permite crear una relación entre una clase padre y una clase hija, donde la clase hija hereda las propiedades y los métodos de la clase padre. Se utiliza la palabra clave `extends` para establecer la herencia.
+
+17. Interfaces: Las interfaces en PHP definen un conjunto de métodos que una clase debe implementar. Las interfaces se utilizan para establecer un contrato que garantiza que las clases que las implementen tengan ciertos métodos disponibles.
+
+18. Palabra clave "static": La palabra clave "static" se utiliza para crear propiedades y métodos estáticos en una clase. Los elementos estáticos están asociados a la clase en sí misma, en lugar de a las instancias individuales de la clase.
+
+19. Palabra clave "final": La palabra clave "final" se utiliza para indicar que una clase, método o propiedad no puede ser heredada o sobreescrita por clases hijas.
+
+20. Clases abstractas: Las clases abstractas en PHP contienen métodos declarados pero no implementados. Estas clases se utilizan como plantillas para crear clases hijas que deben implementar los métodos abstractos definidos en la clase abstracta.
